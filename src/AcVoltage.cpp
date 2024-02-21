@@ -99,6 +99,8 @@ float AcVoltage::calibrationVoltageRMS(float value)
             max = this->bufferFilter[i];
         }
     }
+
+    #if 0
     // max = max < 1.6 ? 0 : max;
     Serial.print("max");
     Serial.print(1);
@@ -112,6 +114,7 @@ float AcVoltage::calibrationVoltageRMS(float value)
     Serial.print(value,2);
     Serial.print("V");
     Serial.println();
+    #endif
     return this->adjustMeasure(max);
 }
 
